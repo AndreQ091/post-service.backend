@@ -1,6 +1,6 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { PostRepository } from '@lib/post/providers';
-import { DeletePostCommand } from './delete-post-command';
+import { DeletePostCommand } from './delete-post.command';
 import { BadRequestException, Logger } from '@nestjs/common';
 
 @CommandHandler(DeletePostCommand)
