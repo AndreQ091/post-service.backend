@@ -31,6 +31,8 @@
     "@nestjs/cqrs": "^9.0.3",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
@@ -82,7 +84,8 @@
     "moduleNameMapper": {
       "^lib/providers(|/.*)$": "<rootDir>/libs/providers/src/$1",
       "^@lib/entities(|/.*)$": "<rootDir>/libs/entities/src/$1",
-      "^@lib/post(|/.*)$": "<rootDir>/libs/post/src/$1"
+      "^@lib/post(|/.*)$": "<rootDir>/libs/post/src/$1",
+      "^@lib/errors(|/.*)$": "<rootDir>/libs/errors/src/$1"
     }
   }
 }
