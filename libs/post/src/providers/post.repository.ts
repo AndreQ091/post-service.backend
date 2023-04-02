@@ -1,5 +1,5 @@
-import { PostAggregate } from '../post.aggregate';
-import { IPost } from '../post.interface';
+import { PostAggregate } from '../domain/post.aggregate';
+import { IPost } from '../domain/post.interface';
 
 export abstract class PostRepository {
   abstract save(post: IPost): Promise<PostAggregate>;
