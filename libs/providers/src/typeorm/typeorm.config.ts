@@ -16,8 +16,10 @@ const options = (): DataSourceOptions => {
     url,
     schema: 'public',
     logging: configService.get('NODE_ENV') === 'development',
-    entities: [],
-    migrations: [join(process.cwd(), 'migrations', '**', '*.migration.ts')],
+    entities: [
+      join(process.cwd(), 'dist', 'libs', 'entities', '**', '*.entity.{ts,js}'),
+    ],
+    migrations: [join(process.cwd(), 'migrations', '**', '*_migration.ts')],
     migrationsRun: true,
     migrationsTableName: 'migrations',
   };
