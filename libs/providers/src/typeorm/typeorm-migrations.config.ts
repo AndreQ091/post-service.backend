@@ -2,7 +2,6 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { config } from 'dotenv';
 import { join } from 'path';
 import { ConfigService } from '@nestjs/config';
-import { ENTITIES } from '@lib/entities';
 
 config({ path: join(process.cwd(), '.env') });
 const configService = new ConfigService();
@@ -17,9 +16,12 @@ const options = (): DataSourceOptions => {
     url,
     schema: 'public',
     logging: configService.get('NODE_ENV') === 'development',
-    entities: ENTITIES,
+    entities: [
+      join(process.cwd(), 'dist', 'libs', 'entities', '**', '*.entity.{ts,js}'),
+    ],
     migrations: [join(process.cwd(), 'migrations', '**', '*_migration.ts')],
     migrationsRun: true,
+    migrationsTableName: 'migrations',
   };
 };
 export const appDataSourse = new DataSource(options());
