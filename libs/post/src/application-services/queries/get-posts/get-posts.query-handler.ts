@@ -15,13 +15,13 @@ export class GetPostsQueryHandler
   async execute({
     pagination,
   }: GetPostsQuery): Promise<[PostAggregate[], number]> {
-    const [data, count] = await this.postRepository
+    const [data, count]: [PostAggregate[], number] = await this.postRepository
       .findAll(pagination)
       .catch((e) => {
         this.logger.error(e);
         return [[], 0];
       });
 
-    return [data, count] as [PostAggregate[], number];
+    return [data, count];
   }
 }
