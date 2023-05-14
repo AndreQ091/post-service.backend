@@ -20,8 +20,6 @@ export class PostAdapter implements PostRepository {
     if (post.id) {
       const existPost = await this.findOne(post.id);
       if (existPost) {
-        throw new Error('Post not found');
-      } else {
         const { id, ...dataToUpdate } = post;
         await this.postRepository.update({ id }, dataToUpdate);
         return this.findOne(post.id);
