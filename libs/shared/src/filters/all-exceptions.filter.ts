@@ -25,7 +25,7 @@ export class AllExceptionsFilter<T> implements ExceptionFilter {
       status = HttpStatus.INTERNAL_SERVER_ERROR;
     }
 
-    if (['graphql'].includes(host.getType())) {
+    if (['graphql', 'rmq'].includes(host.getType())) {
       throw new HttpException(this.respond(status, req, exception), status);
     }
 

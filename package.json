@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.7.3",
+    "@golevelup/nestjs-rabbitmq": "^3.6.1",
     "@nestjs/apollo": "^11.0.6",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
@@ -101,7 +102,8 @@
       "^@lib/post(|/.*)$": "<rootDir>/libs/post/src/$1",
       "^@lib/errors(|/.*)$": "<rootDir>/libs/errors/src/$1",
       "^@lib/shared(|/.*)$": "<rootDir>/libs/shared/src/$1",
-      "^@lib/auth(|/.*)$": "<rootDir>/libs/auth/src/$1"
+      "^@lib/auth(|/.*)$": "<rootDir>/libs/auth/src/$1",
+      "^@amqp/amqp-contracts(|/.*)$": "<rootDir>/libs/amqp-contracts/src/$1"
     }
   }
 }
