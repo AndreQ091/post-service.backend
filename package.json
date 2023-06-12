@@ -1,8 +1,12 @@
 {
-  "name": "post-service.backend",
+  "name": "post-microservice.backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Nest.js post microservice with GraphQL and RabbitQM",
+  "author": {
+    "name": "Andrey Dolgov",
+    "email": "vea86vvkoeyl@mail.ru",
+    "url": "https://t.me/javascriptizer1"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
